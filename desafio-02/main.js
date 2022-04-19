@@ -1,7 +1,7 @@
 const fs = require("fs");
-const path = "./text.json";
+const path = "./products.json";
 const Container = require("./Container");
-const Write = require('./products');
+const Write = require('./writeFile');
 
 try {
     if (!fs.existsSync(path)) {
@@ -14,35 +14,32 @@ try {
     console.log(error);
 }
 
-// En caso de borrar todos los items comentar el motodo de borrado,
-// descomentar la siguiente funcion y correr Node index.js
-
-// Write(path);
+Write(path);
 
 const container = new Container(path);
 
-/* container.getAllItems().then((data) => {
-  console.log(data);
+container.getAll().then((data) => {
+    console.log(data);
 }
-); */
+);
 
-/* container.saveItem({
-  title: "Nike Shoes",
-  price: 123.45,
-  thumbnail:
-    "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",
-}) */
+container.Save({
+    title: "Libro",
+    price: 150,
+    thumbnail:
+        "https://cdn2.iconfinder.com/data/icons/scenarium-vol-2-1/128/040_rules_book_do_not_pros_cons_handbook-512.png",
+})
 
-/* container.getItemById(2); */
+container.getById(2);
 
-/* container.deleteItemById(2).then(() => {
-  container.getAllItems().then((data) => {
-    console.log(data);
-  });
-}); */
+// container.deleteById(2).then(() => {
+//     container.getAll().then((data) => {
+//         console.log(data);
+//     });
+// });
 
-/* container.deleteAllItems().then(() => {
-  container.getAllItems().then((data) => {
-    console.log(data);
-  });
-}); */
+// container.deleteAll().then(() => {
+//     container.getAll().then((data) => {
+//         console.log(data);
+//     });
+// }); 

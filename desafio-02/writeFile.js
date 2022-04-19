@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 const Write = (path) => {
-    let obj = [
+    let object = [
         {
             title: "Escuadra",
             price: 123.45,
@@ -24,7 +24,7 @@ const Write = (path) => {
             id: 3,
         },
     ];
-    fs.writeFile(path, JSON.stringify(obj), function (err) {
+    fs.writeFile(path, JSON.stringify(object), function (err) {
         if (err) throw err;
         console.log("Save");
     });

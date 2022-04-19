@@ -1,5 +1,4 @@
 const fs = require("fs");
-const { json } = require("stream/consumers");
 
 class Container {
     constructor(path) {
@@ -14,9 +13,9 @@ class Container {
 
     }
 
-    async Save() {
+    async Save(object) {
         const archive = await this.getAll();
-        const id = json.length + 1;
+        const id = archive.length + 1;
         object.id = id;
         archive.push(object);
         fs.writeFileSync(this.path, JSON.stringify(archive), function (err) {
@@ -25,20 +24,20 @@ class Container {
         console.log(id);
     }
 
-    async getById() {
+    async getById(id) {
         fs.readFile(this.path, "utf-8", function (err, data) {
             if (err) throw err;
             const archive = JSON.parse(data);
             const item = archive.find((item) => item.id === id);
             if (typeof item === "undefined") {
-                console.log("null");
+                console.log(null);
             } else {
                 console.log(item);
             }
         });
     }
 
-    async deleteItemById(id) {
+    async deleteById(id) {
         const archive = await this.getAll();
         const newArray = archive.filter((item) => item.id !== id);
         fs.writeFileSync(this.path, JSON.stringify(newArray), function (err) {
