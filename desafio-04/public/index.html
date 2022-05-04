@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Store</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <h1> Welcome!!</h1>
+        <h2>Products for the whole family</h2>
+    </header>
+
+    <div class="contenedor">
+        <div>
+            <img
+                src="https://www.latercera.com/resizer/bqGmSB9zaav9BRXPcQKR-3SGXNk=/900x600/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/KPEK5OWGKFEQNEVBIWOIPKEXOM.jpg">
+        </div>
+        <h1>Order your product here</h1>
+        <form action="/api/products" method="POST">
+            <input type="text" name="title" placeholder="Product name" />
+            <input type="text" name="price" placeholder="Price" />
+            <input type="text" name="thumbnail" placeholder="Thumbnail product" />
+            <button type="submit">Load product</button>
+        </form>
+    </div>
+</body>
+
+</html>
