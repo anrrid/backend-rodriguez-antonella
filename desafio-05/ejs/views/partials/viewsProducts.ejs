@@ -1,0 +1,26 @@
+<div class="container m-5">
+    <h1>Saved products</h1>
+    <table class="table table-primary table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Price</th>
+                <th scope="col">Thumbnail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% productos.forEach(function(prod){ %>
+                <tr>
+                    <td class="nombreProd">
+                        <%= prod.title %>
+                    </td>
+                    <td class="prProd">
+                        <%= prod.price %>
+                    </td>
+                    <td><img alt="Foto" class="fotoProd" src=<%=prod.thumbnail %>></td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+    <a href="/" class="btn btn-lg btn-info" role="button"><i class="bi-house-fill"></i> Inicio</a>
+</div>

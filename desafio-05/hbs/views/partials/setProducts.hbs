@@ -1,0 +1,38 @@
+<div class="container m-5">
+    <h1>Set Products</h1>
+    <form action="/products" method="POST">
+        <div class="input-group m-3">
+            <span class="input-group-text">Title: </span>
+            <input type="text" class="form-control" placeholder="Name" name="title" />
+        </div>
+        <div class="input-group m-3">
+            <span class="input-group-text">Price: </span>
+            <input type="number" class="form-control" placeholder="Price" name="price" />
+        </div>
+        <div class="input-group m-3">
+            <span class="input-group-text">Thumbnail</span>
+            <input type="text" class="form-control" placeholder="URL" name="thumbnail" id="url" />
+        </div>
+        <button class="btn btn-success m-3" type="submit"><i class="bi bi-check-square-fill"></i>
+            Set</button>
+        <a href="/products" class="btn btn-info m-3" role="button"><i class="bi bi-collection-play-fill"></i>
+            List of products</a>
+    </form>
+    <hr />
+    <div class="container">
+        <span>Thumbnail URL</span>
+        <br />
+        <button class="btn btn-sm btn-primary"
+            onclick="copiar('https://mx.web.img3.acsta.net/c_310_420/pictures/18/09/27/22/55/3801936.jpg')"><i
+                class="bi bi-card-image"></i> Item 1 "Escuadra"</button>
+        <button class="btn btn-sm btn-primary"
+            onclick="copiar('https://i.pinimg.com/550x/6c/f5/66/6cf5666153e2260e10308097622d5be3.jpg')"><i
+                class="bi bi-card-image"></i> Item 2"Calculadora"</button>
+        <button class="btn btn-sm btn-primary"
+            onclick="copiar('https://sm.ign.com/ign_es/movie/i/it-capitul/it-capitulo-2_4xsj.jpg')"><i
+                class="bi bi-card-image"></i> item 3"Globo Terráqueo"</button>
+        <button class="btn btn-sm btn-primary"
+            onclick="copiar('http://4.bp.blogspot.com/-e_gqN4lHtWc/VYTgZWLY4MI/AAAAAAAAAiU/PYC9T-9GbuM/s1600/El%2Bresplandor%2Bpel%25C3%25ADcula.jpg')"><i
+                class="bi bi-card-image"></i> Item 4 "Libro"</button>
+    </div>
+</div>

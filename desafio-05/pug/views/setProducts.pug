@@ -1,0 +1,36 @@
+doctype 5
+html(lang="es")
+head
+    title Products - PUG
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous")
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css")
+    link(rel="stylesheet" href="./style.css")
+body
+    div.container.m-5
+      h1 Set Products
+        form(action="/productos", method="POST")
+          div.input-group.m-3
+            span.input-group-text Title: 
+            input(type="text", placeholder="Nombre", name="title").form-control
+          div.input-group.m-3
+            span.input-group-text Price: 
+            input(type="number", placeholder="Precio", name="price").form-control
+          div.input-group.m-3
+            span.input-group-text Thumbnail
+            input(type="text", placeholder="URL", name="thumbnail", id="url").form-control
+          button(type="submit").btn.btn-success.m-3 <i class="bi bi-check-square-fill"></i> Login
+          a(href="/productos", role="button").btn.btn-info.m-3 <i class="bi bi-collection-play-fill"></i> List
+      hr
+      div.container
+        span Thumbnail URL
+        br
+        button(onclick="copiar('https://mx.web.img3.acsta.net/c_310_420/pictures/18/09/27/22/55/3801936.jpg')").btn.btn-sm.btn-primary.m-1 <i class="bi bi-card-image"></i> Item 1 "Escuadra"
+        button(onclick="copiar('https://i.pinimg.com/550x/6c/f5/66/6cf5666153e2260e10308097622d5be3.jpg')").btn.btn-sm.btn-primary.m-1 <i class="bi bi-card-image"></i>  Item 2"Calculadora"</button>
+        button(onclick="copiar('https://sm.ign.com/ign_es/movie/i/it-capitul/it-capitulo-2_4xsj.jpg')").btn.btn-sm.btn-primary.m-1 <i class="bi bi-card-image"></i> Item 3"Globo Terráqueo"</button>
+        button(onclick="copiar('http://4.bp.blogspot.com/-e_gqN4lHtWc/VYTgZWLY4MI/AAAAAAAAAiU/PYC9T-9GbuM/s1600/El%2Bresplandor%2Bpel%25C3%25ADcula.jpg')").btn.btn-sm.btn-primary.m-1 <i class="bi bi-card-image"></i> Item 4 "Libro"</button>
+      
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous")
+    script(src="app.js")
