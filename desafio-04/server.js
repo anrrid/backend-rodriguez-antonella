@@ -79,7 +79,7 @@ routerProducts.delete("/:id", (req, res) => {
 app.use("/api/products", routerProducts);
 
 
-const PORT = 8080;
+const PORT = 8081;
 const server = app.listen(PORT, () => {
     console.log(`Server express has been started on ${PORT}`);
 });
