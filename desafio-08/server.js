@@ -1,38 +1,44 @@
-const express = require("express");
-// require the knex package
-const knex = require("knex");
+const express = require('express')
+const { Server: HttpServer } = require('http')
+const { Server: IOServer } = require('socket.io')
+const containerChat = require('./src/controllers/containerChat')
+const containerProd = require('./src/controllers/containerProd')
+const app = express()
+const httpServer = new HttpServer(app)
+const io = new IOServer(httpServer)
 
-var handlebars = require("express-handlebars").create({
-    defaultLayout: "main",
-});
-require("dotenv").config();
-const routesChat = require("./routes/routesChat")
-const routesProd = require("./routes/routes")
-const app = express();
-const http = require("http").Server(app);
-const io = require("socket.io")(http);
+app.use(express.static('./src/public'))
+// app.set('view engine', 'ejs')
 
-app.use(express.static("public"));
-app.use("/static", express.static(__dirname + "/public"));
+// app.get('/', async (req, res) => {
+//     res.render('index.ejs', { root: __dirname })
+// })
 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.use(express.static('./public'));
+io.on('connection', async (sockets) => {
+    const product = await containerProd.getProds()
+    sockets.emit('product', await containerProd.getProds())
+    console.log('Un cliente se ha conectado!: ' + sockets.id)
+    // div
+    sockets.emit('messages', await containerChat.getChat())
 
-io.on("connection", (socket) => {
-    socket.on("add product", (msg) => {
-        io.emit("add product", msg);
-    });
-    socket.on("chat message", (msg) => {
-        io.emit("chat message", msg);
-    });
-});
+    sockets.on('new-product', async data => {
+        await containerProd.saveProd(data)
+        console.log(data)
+
+        io.sockets.emit('product', await containerProd.getProds())
+    })
+    sockets.on('new-message', async dato => {
+
+        await containerChat.saveMsj(dato)
+        console.log(dato)
+
+        io.sockets.emit('messages', await containerChat.getChat())
+    })
+})
 
 
-app.use('/api/chat', routesChat)
-app.use('/api/products', routesProd);
 
-// Listen on port 8080
-http.listen(process.env.PORT, () => {
-    console.log(`Example app listening on port ${process.env.PORT}!`);
-});
+
+
+const PORT = 8080
+httpServer.listen(PORT, () => console.log('Iniciando en el puerto: ' + PORT))
