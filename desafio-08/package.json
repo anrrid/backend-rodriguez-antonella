@@ -1,0 +1,22 @@
+{
+  "name": "desafio-08",
+  "version": "1.0.0",
+  "description": "- Consigna: Tomando como base las clases Contenedor en memoria y en archivos, desarrollar un nuevo contenedor con idénticos métodos pero que funcione sobre bases de datos, utilizando Knex para la conexión. Esta clase debe recibir en su constructor el objeto de configuración de Knex y el nombre de la tabla sobre la cual trabajará. Luego, modificar el desafío entregable de la clase 11”Chat con Websocket”:",
+  "main": "messenge.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "knex": "^2.1.0",
+    "mysql": "^2.18.1",
+    "socket.io": "^4.5.1",
+    "sqlite3": "^5.0.8"
+  }
+}
