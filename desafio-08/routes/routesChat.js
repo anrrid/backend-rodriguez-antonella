@@ -1,4 +1,7 @@
 const db = require("../connection/sqlite");
+const express = require('express');
+const { Router } = express
+const chats = new Router();
 
 const list = () => db("chat").select("email", "message", "time");
 
@@ -19,4 +22,9 @@ const saveProduct = (req, res) => {
         .catch((err) => res.json(err));
 };
 
-export { getChat, saveProduct };
+
+
+chats.post("/chat", saveProduct);
+chats.get("/chat", getChat);
+
+module.exports = chats;

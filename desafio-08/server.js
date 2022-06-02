@@ -6,7 +6,8 @@ var handlebars = require("express-handlebars").create({
     defaultLayout: "main",
 });
 require("dotenv").config();
-const routes = require("./api/routes");
+const routesChat = require("./routes/routesChat")
+const routesProd = require("./routes/routes")
 const path = require("path");
 const Container = require('../classes/containerProds.js');
 const container = new Container(path);
@@ -37,10 +38,11 @@ io.on("connection", (socket) => {
 });
 
 app.get("/products", async (req, res) => {
-    res.render("index.hbs", { products: await container.getProd() });
+    res.render("index.html", { products: await container.getProd() });
 });
 
-app.use("/api", routes);
+app.use('/api/chat', routesChat)
+app.use('/api/products', routesProd);
 
 // Listen on port 8080
 http.listen(process.env.PORT, () => {
