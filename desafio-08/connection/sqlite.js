@@ -3,7 +3,7 @@ const path = require("path");
 const sqliteOptions = require("knex")({
     client: "better-sqlite3",
     connection: {
-        filename: "db/ecommerse.sqlite",
+        filename: "db/ecommerce.sqlite",
     },
     useNullAsDefault: true,
 });

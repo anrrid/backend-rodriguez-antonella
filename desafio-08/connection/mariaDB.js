@@ -1,11 +1,11 @@
 const options = require("knex")({
     client: "mysql",
     connection: {
-        host: "localhost",
-        user: "root",
-        password: "",
-        database: "ecommerce",
-        port: 3306,
+        host: process.env.MARIADB_HOST || "localhost",
+        user: process.env.MARIADB_USER || "root",
+        password: process.env.MARIADB_PASSWORD || "",
+        database: process.env.MARIADB_DATABASE || "ecommerce",
+        port: process.env.MARIADB_PORT || 3306,
     },
     pool: {
         min: 0,
