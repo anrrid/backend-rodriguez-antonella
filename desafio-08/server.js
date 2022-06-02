@@ -8,11 +8,6 @@ const httpServer = new HttpServer(app)
 const io = new IOServer(httpServer)
 
 app.use(express.static('./src/public'))
-// app.set('view engine', 'ejs')
-
-// app.get('/', async (req, res) => {
-//     res.render('index.ejs', { root: __dirname })
-// })
 
 io.on('connection', async (sockets) => {
     const product = await containerProd.getProds()
