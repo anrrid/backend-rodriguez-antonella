@@ -1,14 +1,15 @@
-# Desafio Primer Base de Datos
-
-- Consigna: Tomando como base las clases Contenedor en memoria y en archivos, desarrollar un nuevo contenedor con idénticos métodos pero que funcione sobre bases de datos, utilizando Knex para la conexión. Esta clase debe recibir en su constructor el objeto de configuración de Knex y el nombre de la tabla sobre la cual trabajará. Luego, modificar el desafío entregable de la clase 11”Chat con Websocket”:
-
+## Notas
+Crear una database en en MySQL llamada "db-ecommerce"
+·Instalar las dependencias
 ```
-Cambiar la persistencia de los mensajes de filesystem a base de datos SQLite3.
-Cambiar la persistencia de los productos de memoria a base de datos MariaDB.
+npm i ejs express knex moment mysql nodemon socket.io sqlite3
 ```
+### Ejecutar los siguientes comandos:  
+Crea la tablas, de manera automática, dentro de las bases de datos(tanto MySQL, como de Sqlite3):
 ```
-Desarrollar también un script que utilizando knex cree las tablas necesarias para la persistencia en cuestión (tabla mensajes en sqlite3 y tabla productos en mariaDb).
+npm start
 ```
-
-- Notas:
-Definir una carpeta DB para almacenar la base datos SQLite3 llamada ecommerce
+Inicializar el server en el puerto 8080
+```
+npm run dev
+```
