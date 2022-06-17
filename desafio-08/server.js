@@ -1,38 +1,48 @@
 const express = require('express')
 const { Server: HttpServer } = require('http')
 const { Server: IOServer } = require('socket.io')
-const containerChat = require('./src/controllers/containerChat.js')
-const containerProd = require('./src/controllers/containerProd.js')
+const Contenedor = require('./src/controllers/contenedorMsg.js')
+const Container = require('./src/controllers/contenedorProd.js')
 const app = express()
 const httpServer = new HttpServer(app)
 const io = new IOServer(httpServer)
+const routesProd = require('./src/router/productsRoutes.js')
 
 app.use(express.static('./src/public'))
+app.set('view engine', 'ejs')
 
-io.on('connection', async (sockets) => {
-    const product = await containerProd.getProds()
-    sockets.emit('product', await containerProd.getProds())
-    console.log('Un cliente se ha conectado!: ' + sockets.id)
-    // div
-    sockets.emit('messages', await containerChat.getChat())
-
-    sockets.on('new-product', async data => {
-        await containerProd.saveProd(data)
-        console.log(data)
-
-        io.sockets.emit('product', await containerProd.getProds())
-    })
-    sockets.on('new-message', async dato => {
-
-        await containerChat.saveMsj(dato)
-        console.log(dato)
-
-        io.sockets.emit('messages', await containerChat.getChat())
-    })
+app.get('/', async (req, res) => {
+    res.render('index.ejs', {root: __dirname})
 })
 
 
 
+
+
+io.on('connection', async (sockets) => {
+    const product = await Container.getProds()
+    sockets.emit('product', await Container.getProds())
+    console.log('Un cliente se ha conectado!: ' + sockets.id)
+    // div
+    sockets.emit('messages', await Contenedor.getMsg())
+
+    sockets.on('new-product', async data => {
+        await Container.saveProd(data)
+        console.log(data)
+        
+        io.sockets.emit('product', await Container.getProds())
+    })
+    sockets.on('new-message', async dato => {
+
+        await Contenedor.saveMsj(dato)
+        console.log(dato)
+
+        io.sockets.emit('messages', await Contenedor.getMsg())
+    })
+})
+
+
+app.use('/api/products', routesProd);
 
 
 const PORT = 8080

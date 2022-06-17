@@ -4,7 +4,7 @@ const options = {
         host: 'localhost',
         user: 'root',
         password: '',
-        database: 'db-ecommerce'
+        database: 'dbecommerce'
     }
 }
 
