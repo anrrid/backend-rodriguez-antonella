@@ -6,20 +6,41 @@
 }
 
 body{
-    background: rgb(190, 190, 190);
+    background-color:#ebebeb;
 }
 
 body::-webkit-scrollbar {
     width: 18px;
 }
-body::-webkit-scrollbar-track {
-    background: rgb(190, 190, 190);
-}
+
 body::-webkit-scrollbar-thumb {
-    background-color: orange;
+    background-color: rgba(114, 111, 104, 0.444);
     border-radius: 20px;
     border: 3px solid rgb(190, 190, 190);
 }
+
+header {
+    padding: 2% 10%;
+    background: #ffea4b;
+    width: 100%;
+    color: rgb(85, 74, 102);
+  }
+
+header h1 {
+    margin: center;
+}
+
+  #image{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1mm;
+  }
+  
+  #image img{
+    margin: 20px  auto;
+    height: 300px;
+    width: 450px;
+  }
 
 .prod__error{
     display: block ;
@@ -38,7 +59,7 @@ body::-webkit-scrollbar-thumb {
     height: 360px;
     margin-left: 5%;
     text-align: center;
-    background: rgb(23, 23, 23);
+    background: #ebebeb;
     margin-bottom: 10px;
     border-radius: 10px;
 }
@@ -49,22 +70,20 @@ body::-webkit-scrollbar-thumb {
 
 .title{
     padding-top: 15px;
-    color: orange;
+    color: rgb(85, 74, 102);
 }
 
 
 .inputs input[type="text"],
 .inputs input[type="number"]{
-    background: rgb(23, 23, 23);
+    background: #ffffff;
     color: white;
     width: 90%;
     margin-left: 4%;
     margin-top: 10px;
     padding: 10px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid rgb(228, 228, 228);
+    border: 1px solid #a2a2a2;
+  border-radius: 10px;
 }
 
 
@@ -77,7 +96,7 @@ body::-webkit-scrollbar-thumb {
     width: 30%;
     color: #fff;
     border: none;
-    background: #e2a413;
+    background: green;
     padding: 10px 20px;
     border-radius: 10px 0;
     transition: ease all 0.3s;
@@ -86,7 +105,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .btn__add:hover{
-    background: #ffdc41;
+    background: rgba(0, 128, 0, 0.589);
     border-radius: 0 10px;
     cursor: pointer
 }
@@ -99,11 +118,11 @@ body::-webkit-scrollbar-thumb {
     text-align: center;
     width: 100%;
     padding: 20px 0;
-    background: rgb(19, 19, 19);
+    background: #ffea4b;
 }
 
 .form__chat h1{
-    color:#fff
+    color:rgb(85, 74, 102)
 }
 
 .chat__err{
@@ -118,7 +137,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .point{
-    color: orange;
+    color: green;
 }
 
 .mensaje{
@@ -172,7 +191,7 @@ body::-webkit-scrollbar-thumb {
 .container__all{
     width: 100%;
     height: 63vh;
-    background: rgb(30, 30, 34);
+    background: #ffffffb6;
     overflow-y: scroll;
 }
 
@@ -184,7 +203,7 @@ body::-webkit-scrollbar-thumb {
 
 .date{
     line-height: 25px;
-    color: rgb(255, 255, 0);
+    color: rgb(85, 74, 102) ;
     font-size: 21px;
 }
 
@@ -194,7 +213,7 @@ body::-webkit-scrollbar-thumb {
 
 .nombre{
     line-height: 25px;
-    color: rgb(255, 255, 0);
+    color: rgb(85, 74, 102) ;
     font-size: 21px;
 }
 
@@ -208,9 +227,7 @@ body::-webkit-scrollbar-thumb {
     width: 12px;
   }
   
-.container__all::-webkit-scrollbar-track {
-    background: rgb(30, 30, 34);
-  }
+
   
 .container__all::-webkit-scrollbar-thumb {
     background-color: orange;
@@ -248,7 +265,7 @@ body::-webkit-scrollbar-thumb {
     height: 500px;
     overflow-y: scroll;
     margin-left: 5%;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 10px 10px 10px grey;
     border: 1px solid #dbdbdb;
     border-radius: 5px;
     margin-bottom: 1%;
@@ -290,8 +307,8 @@ body::-webkit-scrollbar-thumb {
 
 
 .fl-table thead th {
-    color: #ffdc41;
-    background: #000000;
+    color: rgb(85, 74, 102);
+    background:#ffea4b;
 }
 
 thead tr th { 

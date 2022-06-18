@@ -19,7 +19,7 @@ const server = app.listen(PORT, () => {
 });
 
 
-//GET products.json
+//POST productos
 app.get("/productos", async (req, res) => {
     res.json(await data);
 });

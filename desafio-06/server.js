@@ -50,5 +50,5 @@ io.on('connection', async socket => {
     })
 });
 
-httpServer.listen(8080, () => console.log('Server se encuentra escuchando en puerto 8080'))
+httpServer.listen(8081, () => console.log('Server se encuentra escuchando en puerto 8080'))
 httpServer.on('error', (error) => { })

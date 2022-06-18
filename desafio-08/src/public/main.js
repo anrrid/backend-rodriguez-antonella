@@ -2,7 +2,7 @@ const sockets = io.connect()
 
 function addProduct(e) {
     const product = {
-        name: document.getElementById("name").value,
+        title: document.getElementById("name").value,
         price: document.getElementById("price").value,
         stock: document.getElementById("stock").value,
         description: document.getElementById("description").value,
@@ -17,7 +17,7 @@ function render(data) {
         if(data.length > 0) {
             const html = data.map((elem, index) => {
                 return(`<tr>
-                <td>${elem.name}</td>
+                <td>${elem.title}</td>
                 <td>$ ${elem.price}</td>
                 <td>${elem.description}</td>
                 <td>${elem.stock}</td>
@@ -69,7 +69,7 @@ function renders(dato) {
         
             document.getElementById("messages").innerHTML = html2
         } else {
-            const errHtml = `<p class="chat__err">Aún no hay mensajes :( ¡Sé el primero en enviar uno!</p>`
+            const errHtml = `<p class="chat__err">Send your query</p>`
             
             document.getElementById("messages").innerHTML = errHtml
         }
