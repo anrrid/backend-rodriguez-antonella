@@ -1,6 +1,6 @@
 body{
-    background:rgb(219, 30, 30);
-    font-family: 'Times New Roman', Times, serif;
+    background: #ebebeb;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* header */
@@ -10,7 +10,7 @@ header {
 }
 
 .navbar {
-    background: linear-gradient(rgb(255, 255, 255), #eee);
+    background: #ffea4b;
 }
 
 .a-websocket {
