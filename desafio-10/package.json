@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "@faker-js/faker": "^7.3.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "knex": "^2.1.0",
+    "moment": "^2.29.3",
+    "mongoose": "^6.4.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.18",
+    "normalizr": "^3.6.2",
+    "socket.io": "^4.5.1",
+    "sqlite3": "^5.0.8"
+  },
+  "scripts": {
+    "start": "node ./src/scriptDB/crearTablas.js",
+    "dev": "nodemon /src/server.js"
+  },
+  "name": "desafio-10",
+  "description": "Crear una database en en MySQL llamada \"dbecommerce\"",
+  "version": "1.0.0",
+  "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
