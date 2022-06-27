@@ -6,7 +6,6 @@ const ContainerProd = require('./src/controllers/containerProd.js')
 const app = express()
 const httpServer = new HttpServer(app)
 const io = new IOServer(httpServer)
-const routesProd = require('./src/router/productsRoutes.js')
 const faker = require ('./src/controllers/faker.js')
 
 app.use(express.static('./src/public'))
@@ -15,24 +14,23 @@ app.set('view engine', 'ejs')
 app.get('/', async (req, res) => {
     res.render('index.ejs', {root: __dirname})
 })
-app.use('/products', routesProd)
-app.get('products-test', async (req, res) => {
 
-    for (let index = 0; index < 5; index++) {
-       
+
+app.get('/products-test', async (req, res) => {
+    
+    for (let i = 0; i < 5; i++) {
         const products = faker()
-    const add = await ContainerProd.saveProd(products)
+        const add = await ContainerProd.saveProd(products)
     }
     res.redirect('/')
 })
-
 
 //sockets
 
 io.on('connection', async (sockets) => {
     const product = await ContainerProd.getProds()
     sockets.emit('product', await ContainerProd.getProds())
-    console.log('Un cliente se ha conectado!: ' + sockets.id)
+    console.log('A client has connected: ' + sockets.id)
     console.log('test ' + sockets.id)
 
     console.log(product, 'product');
@@ -56,4 +54,4 @@ io.on('connection', async (sockets) => {
 
 
 const PORT = 8080
-httpServer.listen(PORT, () => console.log('Iniciando en el puerto: ' + PORT))
+httpServer.listen(PORT, () => console.log('Server on: ' + PORT))

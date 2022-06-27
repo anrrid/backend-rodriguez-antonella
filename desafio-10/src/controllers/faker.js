@@ -1,18 +1,16 @@
 const {faker} = require('@faker-js/faker')
  faker.locale= 'en'
  
- function generateRandomProducts() {
-
-       
-        const product = {
-            title: faker.commerce.productName(),
-            price: faker.commerce.price(),
-            stock: faker.random.numeric(),
-            description: faker.commerce.productName(),
-            url: faker.image.imageUrl()
-        }
-           
-    return product
+ const generateRandomProducts = function createRandom() {
+    const products = {
+        name: faker.commerce.product(),
+        price: faker.commerce.price(),
+        stock: faker.random.numeric(),
+        description: faker.commerce.productName(),
+        thumbnail: faker.image.imageUrl()
+    }
+    console.log(products, 'random product0');
+    return products
 }
  
  
