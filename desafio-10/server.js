@@ -68,7 +68,7 @@ io.on('connection', async (sockets) => {
         const text = data.message
         const date = data.date
         const hour = data.hour
-        await ContainerMsg.saveMsj(author, text, date, hour)
+        await ContainerMsg.saveMsg(author, text, date, hour)
         console.log(data, 'data-message')
 
         io.sockets.emit('messages', await ContainerMsg.getMsg())
@@ -80,7 +80,8 @@ io.on('connection', async (sockets) => {
 async function getNormalizedMessage() {
     const messages = await ContainerMsg.getMsg()
     const normalized = normalizeMessages ({ id: 'mensajes', messages})
-    return normalized
+    const answer = print(normalized)
+    return answer
 }
 
 async function denormalizedList(normMessages) {
