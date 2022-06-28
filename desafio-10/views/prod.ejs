@@ -4,15 +4,17 @@
             <div class="title">
                 <h1>Order your product here</h1>
             </div>
-            <form class="form__add" id="formAdd" onsubmit="return addProduct(this)">
+            <form  id="formAdd" onsubmit="return addProduct(this)">
                 <div class="inputs">
-                    <input class="name" type="text" id="name" placeholder="Product name" required>
-                    <input class="price" type="number" id="price" placeholder="Price" required>
-                    <input class="description" type="text" id="description" placeholder="Description" required>
-                    <input class="stock" type="number" id="stock" placeholder="Stock" required>
-                    <input class="thumbnail" type="text" id="thumbnail" placeholder="Thumbnail product" required>
-                    <input id="btn" class="btn__add" type="submit" value="Add">
+                    <div> <input class="name" type="text" id="name" placeholder="Product name" required></div>
+                    <div><input class="price" type="number" id="price" placeholder="Price" required></div>
+                    <div> <input class="description" type="text" id="description" placeholder="Description" required></div>
+                    <div> <input class="stock" type="number" id="stock" placeholder="Stock" required></div>
+                    <div> <input class="thumbnail" type="text" id="thumbnail" placeholder="Thumbnail product" required></div>
+                    <div> <input id="btn" class="btn__add" type="submit" value="Add"></div>
+                    <div><input class="btn__add" href="http://localhost:8080/products-test" value="Product Random"></div>
                 </div>
+                
                 
             </form>
         </div>
@@ -34,7 +36,7 @@
                 <tbody>
             </table>
             <div id="errProduct"></div>
-            <div><div><input class="btn__add" href="http://localhost:8080/products-test" value="Product Random"></div></div>
+         
             
         </div>
         <div class="arrow ">

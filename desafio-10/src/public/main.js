@@ -45,15 +45,15 @@ function addMessage(a) {
     const message = {
        author: {
         id: document.getElementById("id").value,
-        name: document.getElementById("id").value,
-        subname: document.getElementById("id").value,
-        age: document.getElementById("id").value,
-        nickname: document.getElementById("id").value,
-        avatar: document.getElementById("id").value,
+        name: document.getElementById("name").value,
+        subname: document.getElementById("subname").value,
+        age: document.getElementById("age").value,
+        nickname: document.getElementById("nickname").value,
+        avatar: document.getElementById("avatar").value,
        },
        text: document.getElementById("text").value,
-       date: document.getElementById(),
-       hour: document.getElementById(),
+       date: date.getElementById(),
+       hour: date.getElementById(),
     }
     sockets.emit("new-message", message);
     return false
@@ -65,7 +65,7 @@ function renders(data) {
             const html2 = data.map((element, index) => {
                 return(`<div class="container__mensajes">
                     <div class="text__mensaje">
-                        <h3 class="nombre">${element.author}</h3>
+                        <h3 class="nombre">${element.author.id}</h3>
                         <p class="texto">: ${element.text}</p>
                     </div>
                     <div class="fecha">

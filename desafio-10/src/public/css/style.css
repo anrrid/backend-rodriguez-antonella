@@ -56,7 +56,7 @@ header h1 {
 
 .form__product{
     width: 90%;
-    height: 360px;
+    height: 500px;
     margin-left: 5%;
     text-align: center;
     background: #ebebeb;
@@ -93,7 +93,7 @@ header h1 {
 }
 
 .btn__add{
-    width: 30%;
+    
     color: #fff;
     border: none;
     background: green;
@@ -111,7 +111,13 @@ header h1 {
 }
 
 
-
+.form__frame{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(8, 1fr, 70px);
+    column-gap: 10px;
+    row-gap: 10px;
+}
 
 
 .form__chat{
@@ -153,10 +159,16 @@ header h1 {
 }
 
 .email{
-    width: 20%;
+    width: 80%;
     padding: 10px;
+    margin: 10px;
     border-radius: 10px;
 }
+
+.message {
+    height: 50px;
+}
+
 
 .btn{
     color: #fff;
