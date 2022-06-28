@@ -77,7 +77,7 @@ header h1 {
 .inputs input[type="text"],
 .inputs input[type="number"]{
     background: #ffffff;
-    color: white;
+    color: black;
     width: 90%;
     margin-left: 4%;
     margin-top: 10px;

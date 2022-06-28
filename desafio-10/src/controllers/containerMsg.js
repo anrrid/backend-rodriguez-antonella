@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-const models = require('../models/products.js')
-const moment = require('moment')
+const models = require('../models/mongooseSchema.js')
 
 mongoose.connect('mongodb+srv://coderhouse:coderhouse@cluster0.ijjaz.mongodb.net/?retryWrites=true&w=majority')
 

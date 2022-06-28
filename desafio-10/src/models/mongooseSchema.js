@@ -1,9 +1,9 @@
 const mongoose = require ('mongoose');
 
-const prodsCollection = 'mensajes';
+const msgCollection = 'messages';
 
 //SCHEMA
-const prodsSchema = new mongoose.Schema({
+const msgSchema = new mongoose.Schema({
         author: {
             id: {type: String, require: true},
             name: {type: String, require: true},
@@ -21,8 +21,6 @@ const prodsSchema = new mongoose.Schema({
 });
 
 
-// //MODELS
-// export const ProductsModel = mongoose.model(prodsCollection, prodsSchema);
-const products = mongoose.model(prodsCollection, prodsSchema);
+const products = mongoose.model(msgCollection, msgSchema);
 
 module.exports = products;
